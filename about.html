@@ -15,6 +15,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      padding-top: 80px;
     }
     .main-content { flex: 1 0 auto; }
     .footer {
@@ -69,35 +70,32 @@
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg w-100">
+  <nav class="navbar navbar-expand-lg w-100 fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand fw-semibold" href="#">ROSHAN</a>
-
+      <a class="navbar-brand fw-semibold" href="index.html">ROSHAN</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link " href="{{ url_for('home') }}">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="{{ url_for('about') }}">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('resume') }}">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">Awards & Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('portfolio') }}">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Awards & Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div class="d-none d-lg-flex social-icons">
         <a href="#"><i class="bi bi-facebook"></i></a>
         <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+        <a href="https://linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
   </nav>
   <div class="main-content">
     <div class="container about-section text-center">
-      <img src="{{ url_for('static', filename='imgs/roshan.jpeg') }}" alt="Roshan" class="profile-img mb-3">
+      <img src="static/imgs/roshan.jpeg" alt="Roshan" class="profile-img mb-3">
       <h2 class="fw-bold mb-2">Roshan Bitlingu</h2>
       <h5 class="text-muted mb-3">Software Developer</h5>
       <p class="lead mb-4">Hi! I'm Roshan, a passionate software developer with a knack for creating beautiful and functional applications. I love working with modern technologies and turning ideas into reality. Let's build something amazing together!</p>
@@ -114,7 +112,7 @@
       <div class="social-icons">
         <a href="#"><i class="bi bi-facebook"></i></a>
         <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+        <a href="https://linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
   </footer>

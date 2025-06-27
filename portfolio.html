@@ -15,6 +15,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      padding-top: 80px;
     }
     .main-content { flex: 1 0 auto; }
     .footer {
@@ -95,29 +96,27 @@
   </style>
 </head>
 <body>
-   <nav class="navbar navbar-expand-lg w-100">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg w-100 fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand fw-semibold" href="#">ROSHAN</a>
-
+      <a class="navbar-brand fw-semibold" href="index.html">ROSHAN</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link " href="{{ url_for('home') }}">Home</a></li>
-          <li class="nav-item"><a class="nav-link " href="{{ url_for('about') }}">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('resume') }}">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">Awards & Certifications</a></li>
-          <li class="nav-item"><a class="nav-link active" href="{{ url_for('portfolio') }}">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Awards & Certifications</a></li>
+          <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div class="d-none d-lg-flex social-icons">
         <a href="#"><i class="bi bi-facebook"></i></a>
         <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+        <a href="https://linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
   </nav>
@@ -127,7 +126,7 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card project-card">
-            <img src="{{ url_for('static', filename='imgs/Smark parking System.jpeg') }}" class="project-img" alt="Project 1">
+            <img src="static/imgs/Smark parking System.jpeg" class="project-img" alt="Project 1">
             <div class="card-body">
               <h5 class="card-title">Smart Parking System (IoT)</h5>
               <p class="card-text">A prototype IoT solution that detects parking availability and signals with colored lights. Developed during my internship at Grok Learnings.</p>
@@ -136,7 +135,7 @@
         </div>
         <div class="col-md-4">
           <div class="card project-card">
-            <img src="{{ url_for('static', filename='imgs/SenseWalk.png') }}" class="project-img" alt="Project 2">
+            <img src="static/imgs/SenseWalk.png" class="project-img" alt="Project 2">
             <div class="card-body">
               <h5 class="card-title">SenseWalk (Embedded System)</h5>
               <p class="card-text">An assistive device for the visually impaired, using sensors to detect obstacles and provide real-time feedback. Built as a semester project.</p>
@@ -145,7 +144,7 @@
         </div>
         <div class="col-md-4">
           <div class="card project-card">
-            <img src="{{ url_for('static', filename='imgs/Bill generator.png') }}" class="project-img" alt="Project 3">
+            <img src="static/imgs/Bill generator.png" class="project-img" alt="Project 3">
             <div class="card-body">
               <h5 class="card-title">Bill Generator (Desktop Application)</h5>
               <p class="card-text">A Java-based billing app that automates invoice creation. Awarded in a coding competition for its user-friendly design and robust features.</p>
@@ -154,7 +153,7 @@
         </div>
         <div class="col-md-4">
           <div class="card project-card">
-            <img src="{{ url_for('static', filename='imgs/placement.png') }}" class="project-img" alt="Placement Portal">
+            <img src="static/imgs/placement.png" class="project-img" alt="Placement Portal">
             <div class="card-body">
               <h5 class="card-title">VPlace – College Placement Portal</h5>
               <p class="card-text">A Django-based web portal for college placements, featuring secure logins and efficient student-management tools.</p>
@@ -170,7 +169,7 @@
       <div class="social-icons">
         <a href="#"><i class="bi bi-facebook"></i></a>
         <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+        <a href="https://linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
   </footer>
