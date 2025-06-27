@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - ROSHAN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      min-height: 100vh;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .main-content { flex: 1 0 auto; }
+    .footer {
+      background-color: #ecebe9 !important;
+      flex-shrink: 0;
+      width: 100%;
+      margin-top: auto;
+      box-shadow: 0 -2px 8px #0001;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: #f8f9fa; }
+    .resume-section { background: #fff; border-radius: 16px; box-shadow: 0 2px 16px #0001; padding: 3rem 2rem; margin-top: 2rem; }
+    .section-title { color: #20c997; font-weight: 700; margin-bottom: 1.5rem; }
+    .timeline { border-left: 3px solid #20c997; padding-left: 1.5rem; }
+    .timeline-item { margin-bottom: 2rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .skill-badge { background: #20c997; color: #fff; margin: 0.2rem; }
+    .navbar {
+      background-color: #ecebe9;
+      padding: 1rem 2rem;
+      z-index: 10;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #333;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #20c997;
+    }
+
+    .navbar-nav .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #20c997;
+    }
+
+    .social-icons a {
+      color: #444;
+      margin-left: 10px;
+      font-size: 1.1rem;
+    }
+
+    .social-icons a:hover {
+      color: #20c997;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="#">ROSHAN</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link " href="{{ url_for('home') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link " href="{{ url_for('about') }}">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{{ url_for('resume') }}">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">Awards & Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('portfolio') }}">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="d-none d-lg-flex social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </nav>
+  <div class="main-content">
+    <div class="container resume-section">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="fw-bold mb-1">Roshan Bitlingu</h2>
+          <div class="mb-2">
+            <span class="me-3"><i class="bi bi-telephone"></i> 8169782524</span>
+            <span class="me-3"><i class="bi bi-envelope"></i> roshan.bitlingu6@gmail.com</span>
+            <span class="me-3"><i class="bi bi-linkedin"></i> <a href="https://linkedin.com/in/roshanbitlingu" target="_blank">linkedin.com/in/roshanbitlingu</a></span>
+            <span><i class="bi bi-globe"></i> <a href="https://roshanbits.github.io/portfolio" target="_blank">Portfolio</a></span>
+          </div>
+        </div>
+        <a href="../Downloads/Roshan_Bitlingu_Resume.pdf" class="btn btn-success" download><i class="bi bi-download"></i> Download Resume (PDF)</a>
+      </div>
+      <h4 class="section-title">Summary</h4>
+      <p class="mb-4">I'm a passionate developer and recent Code Canvas Competition winner, with experience in creating efficient software, like a Java-based Bill Generator. My internship projects include a Smart Parking System, where I integrated software with hardware, and SenseWalk, an embedded system to assist visually impaired individuals. These experiences, along with years in a customer-focused role, have strengthened my technical and client management skills. I'm now eager to expand my knowledge and contribute to a dynamic team.</p>
+      <h4 class="section-title mt-5">Education</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h5>Vidyalanakar School of Information Technology, Mumbai, India</h5>
+          <p class="text-muted mb-1">Bachelor of Science in Information Technology – GPA: 9.23/10.0 <span class="ms-2">Jul 2022 – Jun 2025</span></p>
+        </div>
+        <div class="timeline-item">
+          <h5>The Andhra Education Society's Junior College, Mumbai, India</h5>
+          <p class="text-muted mb-1">Higher Secondary Certificate (PCM) – 67.17% <span class="ms-2">Jun 2020 – Mar 2022</span></p>
+        </div>
+      </div>
+      <h4 class="section-title mt-5">Experience</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h5>Intern, Grok Learnings (Remote)</h5>
+          <p class="text-muted mb-1">IoT and Robotics Intern <span class="ms-2">Jun 2023 – Jul 2023</span></p>
+          <ul>
+            <li>Successfully designed and built an IoT project – a smart parking system – demonstrating my understanding of these technologies.</li>
+            <li>Improved Raspberry Pi and Python skills while interfacing microcontrollers and backend systems.</li>
+            <li>Enhanced my technical skillset by learning Python, as showcased through a presentation on the language.</li>
+          </ul>
+        </div>
+      </div>
+      <h4 class="section-title mt-5">Projects</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h5>Smart Parking System (IoT)</h5>
+          <ul>
+            <li>Built a smart parking solution with sensor integration.</li>
+            <li>Handled data transmission using Python and deployed real-time monitoring.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h5>Java Bill Generator (Desktop Application)</h5>
+          <ul>
+            <li>Created a billing application using Java Swing with modular class structure.</li>
+            <li>Automated invoice generation and included error-checking logic via conditional loops and DB ops.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h5>VPlace – College Placement Portal (Web Application)</h5>
+          <ul>
+            <li>Developed a Django-based portal with student, admin login modules.</li>
+            <li>Implemented secure REST APIs and optimized database queries using SQL and ORM.</li>
+          </ul>
+        </div>
+      </div>
+      <h4 class="section-title mt-5">Technical Skills</h4>
+      <div>
+        <span class="badge skill-badge">Java</span>
+        <span class="badge skill-badge">Python</span>
+        <span class="badge skill-badge">SQL</span>
+        <span class="badge skill-badge">HTML</span>
+        <span class="badge skill-badge">CSS</span>
+        <span class="badge skill-badge">Bootstrap</span>
+        <span class="badge skill-badge">Django</span>
+        <span class="badge skill-badge">SQLite</span>
+        <span class="badge skill-badge">Django ORM</span>
+        <span class="badge skill-badge">Arduino</span>
+        <span class="badge skill-badge">Raspberry Pi</span>
+        <span class="badge skill-badge">VS Code</span>
+        <span class="badge skill-badge">GitHub</span>
+        <span class="badge skill-badge">Android Studio</span>
+        <span class="badge skill-badge">Arduino IDE</span>
+        <span class="badge skill-badge">Adobe Photoshop CS3</span>
+      </div>
+    </div>
+  </div>
+  <footer class="footer bg-light text-center py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="mb-2 mb-md-0">&copy; 2024 ROSHAN. All rights reserved.</span>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

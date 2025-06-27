@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - ROSHAN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      min-height: 100vh;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .main-content { flex: 1 0 auto; }
+    .footer {
+      background-color: #ecebe9 !important;
+      flex-shrink: 0;
+      width: 100%;
+      margin-top: auto;
+      box-shadow: 0 -2px 8px #0001;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: #f8f9fa; }
+    .about-section { background: #fff; border-radius: 16px; box-shadow: 0 2px 16px #0001; padding: 3rem 2rem; margin-top: 2rem; }
+    .profile-img { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; border: 4px solid #20c997; margin-bottom: 1rem; }
+    .social-icons a { color: #444; margin: 0 8px; font-size: 1.3rem; }
+    .social-icons a:hover { color: #20c997; }
+    .navbar {
+      background-color: #ecebe9;
+      padding: 1rem 2rem;
+      z-index: 10;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #333;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #20c997;
+    }
+
+    .navbar-nav .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #20c997;
+    }
+
+    .social-icons a {
+      color: #444;
+      margin-left: 10px;
+      font-size: 1.1rem;
+    }
+
+    .social-icons a:hover {
+      color: #20c997;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="#">ROSHAN</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link " href="{{ url_for('home') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{{ url_for('about') }}">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('resume') }}">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">Awards & Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('portfolio') }}">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="d-none d-lg-flex social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </nav>
+  <div class="main-content">
+    <div class="container about-section text-center">
+      <img src="{{ url_for('static', filename='imgs/roshan.jpeg') }}" alt="Roshan" class="profile-img mb-3">
+      <h2 class="fw-bold mb-2">Roshan Bitlingu</h2>
+      <h5 class="text-muted mb-3">Software Developer</h5>
+      <p class="lead mb-4">Hi! I'm Roshan, a passionate software developer with a knack for creating beautiful and functional applications. I love working with modern technologies and turning ideas into reality. Let's build something amazing together!</p>
+      <div class="social-icons mb-2">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+  <footer class="footer bg-light text-center py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="mb-2 mb-md-0">&copy; 2024 ROSHAN. All rights reserved.</span>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

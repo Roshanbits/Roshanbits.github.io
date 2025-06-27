@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - ROSHAN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      min-height: 100vh;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .main-content { flex: 1 0 auto; }
+    .footer {
+      background-color: #ecebe9 !important;
+      flex-shrink: 0;
+      width: 100%;
+      margin-top: auto;
+      box-shadow: 0 -2px 8px #0001;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: #f8f9fa; }
+    .contact-section { background: #fff; border-radius: 16px; box-shadow: 0 2px 16px #0001; padding: 3rem 2rem; margin-top: 2rem; }
+    .form-control:focus { border-color: #20c997; box-shadow: 0 0 0 0.2rem #20c99722; }
+    .contact-info i { color: #20c997; font-size: 1.3rem; margin-right: 8px; }
+    .navbar {
+      background-color: #ecebe9;
+      padding: 1rem 2rem;
+      z-index: 10;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #333;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #20c997;
+    }
+
+    .navbar-nav .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #20c997;
+    }
+
+    .social-icons a {
+      color: #444;
+      margin-left: 10px;
+      font-size: 1.1rem;
+    }
+
+    .social-icons a:hover {
+      color: #20c997;
+    }
+  </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="#">ROSHAN</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link " href="{{ url_for('home') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('resume') }}">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">Awards & Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('portfolio') }}">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="d-none d-lg-flex social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="container contact-section">
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="fw-bold mb-3">Contact Me</h2>
+          <form id="contactForm">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success px-4">Send</button>
+          </form>
+          <script>
+          document.getElementById('contactForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const name = this.querySelector('[placeholder="Your Name"]').value;
+            const email = this.querySelector('[placeholder="Your Email"]').value;
+            const message = this.querySelector('textarea').value;
+            const res = await fetch('http://localhost:5000/submit-contact', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({name, email, message})
+            });
+            if (res.ok) alert('Message sent!');
+            else alert('Failed to send message.');
+          };
+          </script>
+        </div>
+        <div class="col-md-6 contact-info">
+          <h5 class="fw-bold mb-3">Contact Information</h5>
+          <p><i class="bi bi-envelope"></i> roshan.bitlingu6@email.com</p>
+          <p><i class="bi bi-telephone"></i> +91 81697 82524</p>
+          <p><i class="bi bi-geo-alt"></i> Mumbai, Maharashtra, India</p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="www.linkedin.com/in/roshanbitlingu"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer bg-light text-center py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="mb-2 mb-md-0">&copy; 2024 ROSHAN. All rights reserved.</span>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/roshanbitlingu/"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
